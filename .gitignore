@@ -4,7 +4,3 @@
 /bin
 /build
 /.gradle
-# Gradle wrapper
-/gradle/
-/gradlew
-/gradlew.bat

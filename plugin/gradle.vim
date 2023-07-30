@@ -31,10 +31,15 @@ function! s:list_tasks()
 	endfor
 endfunction
 
-function! s:run_task(task)
-	call luaeval('require"gradle".runTask(_A)', a:task)
+function! s:task_comp(A,L,P)
+	let l:tasks = luaeval('require"gradle".getTasksAsList(_A)', getcwd())
+  return join(l:tasks, "\n")
 endfunction
 
+function! s:run_task(...)
+  echo a:000
+	call luaeval('require"gradle".runTask(_A)', a:000)
+endfunction
 
 " ===[ SETUP ]=================================================================
 " Entry point. Initialise RPC
@@ -70,4 +75,4 @@ command! GradleNoOp :echo luaeval('require"gradle".noOp()')
 command! GradleHandshake :echo luaeval('require"gradle".handshake()')
 command! GradleThrow :call luaeval('require"gradle".throwUp()')
 command! GradleTasks :call s:list_tasks()
-command! -nargs=1 GradleRun :call s:run_task('<args>')
+command! -nargs=* -complete=custom,s:task_comp GradleRun :call s:run_task(<f-args>)

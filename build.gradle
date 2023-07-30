@@ -21,8 +21,8 @@ dependencies {
 	implementation 'com.google.guava:guava:28.1-jre'
 
 	// Neovim API client library
-	compile "com.ensarsarajcic.neovim.java:neovim-api:${javaNeovimVersion}"
-	compile "com.ensarsarajcic.neovim.java:handler-annotations:${javaNeovimVersion}"
+	implementation "com.ensarsarajcic.neovim.java:neovim-api:${javaNeovimVersion}"
+	implementation "com.ensarsarajcic.neovim.java:handler-annotations:${javaNeovimVersion}"
 
 	// Gradle Tooling API
 	implementation "org.gradle:gradle-tooling-api:$toolingApiVersion"

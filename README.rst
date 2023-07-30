@@ -13,13 +13,8 @@ Installation
 This is a remote plugin with a compiled component. It requires at least JDK 11.
 Please see the INSTALL_ file for more details.
 
-1) Install this plugin like any other Vim plugin
-2) Install the correct Gradle wrapper
-   .. code-block:: sh
-      gradle wrapper
-2) Build the Java application according to the below instructions
-   .. code-block:: sh
-      ./gradlew install
+.. code-block:: sh
+   use {"augtheo/gradle.nvim" , run = "./gradlew install"}
 
 When running the compiled component, communication happens over standard input
 and standard output (only for testing purpose):
