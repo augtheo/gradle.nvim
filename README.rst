@@ -10,10 +10,10 @@ system with the `Neovim`_ text editor. For now nothing works though.
 Installation
 ############
 
-This is a remote plugin with a compiled component. It requires at least JDK 11.
-Please see the INSTALL_ file for more details.
+This is a remote plugin with a compiled component. It requires at least JDK 11 present in the path.
 
 .. code-block:: sh
+
    use {"augtheo/gradle.nvim" , run = "./gradlew install"}
 
 When running the compiled component, communication happens over standard input
